@@ -40,7 +40,7 @@ public class RobotRest {
 				 r = testCaseServices.execute(testCase,resultTestCase);
 			 }else {
 				 r.complete(resultTestCase);
-			 }
+			 };
 			return r.get();
 		 } catch (Exception e) {
 			// TODO Auto-generated catch block

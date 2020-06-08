@@ -4,8 +4,9 @@ public class TestCase {
 	private Long id;
 	private String script;
 	private int typecase;
-	private String remote_ip;
-	private String remote_port;
+	private String remote;
+	private Long type_browser;
+	
 	public Long getId() {
 		return id;
 	}
@@ -24,17 +25,17 @@ public class TestCase {
 	public void setTypecase(int typecase) {
 		this.typecase = typecase;
 	}
-	public String getRemote_ip() {
-		return remote_ip;
+	public String getRemote() {
+		return remote;
 	}
-	public void setRemote_ip(String remote_ip) {
-		this.remote_ip = remote_ip;
+	public void setRemote(String remote) {
+		this.remote = remote;
 	}
-	public String getRemote_port() {
-		return remote_port;
+	public Long getType_browser() {
+		return type_browser;
 	}
-	public void setRemote_port(String remote_port) {
-		this.remote_port = remote_port;
+	public void setType_browser(Long type_browser) {
+		this.type_browser = type_browser;
 	}
 
 }

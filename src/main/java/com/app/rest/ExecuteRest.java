@@ -32,7 +32,6 @@ public class ExecuteRest {
 			        request, "reg_spaj", "");
 		 DeferredResult<ResponseEntity< String>> deferredResult = new DeferredResult<ResponseEntity<String>>(100000L);
 		 
-		 System.out.println("mulai"+reg_spaj);
 		 if(!reg_spaj.equals("")) {
 		// map.put(reg_spaj, deferredResult);
 			 try {
