@@ -30,6 +30,7 @@ public class ExecuteRest {
 	public DeferredResult <ResponseEntity <String>> handle(HttpServletRequest request) {
 		 String reg_spaj  = ServletRequestUtils.getStringParameter(
 			        request, "reg_spaj", "");
+		 
 		 DeferredResult<ResponseEntity< String>> deferredResult = new DeferredResult<ResponseEntity<String>>(100000L);
 		 
 		 if(!reg_spaj.equals("")) {

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+  'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.app.dao.RobotDao'>
+<insert id="insertResultTestCaseReff"  parameterType="Map">
+	insert into result2testcase(test_case_id,reff_id) values(#{test_case_id},#{reff_id})
+</insert>
+<insert id="insertScript"  parameterType="com.app.model.Script">
+	insert into scripts_testcase(script_name,scripts,description) values(#{script_name},#{scripts},#{description})
+</insert>
+<insert id="insertResultTestCase"  parameterType="com.app.model.ResultTestCase">
+	insert into resulttestcase(reff_id,photo_id,description,pass,status,prefix,case_name,penanda) values(#{reff_id},#{photo_id},#{description},#{pass},#{status},#{prefix},#{case_name},#{penanda})
+</insert>
+</mapper>

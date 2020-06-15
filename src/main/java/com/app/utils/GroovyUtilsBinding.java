@@ -33,8 +33,10 @@ public class GroovyUtilsBinding {
 		
 		public Object run(String scripts) {
 			scripts = createAllScripts(scripts);
-			System.out.println(scripts);
-			return shell.evaluate(scripts);
+			System.out.println("null yaiids"+scripts);
+			
+			Object object = shell.evaluate(scripts);
+			return object;
 		}
 		public void addLib(String packageName) {
 			this.libs.add(packageName);
@@ -50,6 +52,8 @@ public class GroovyUtilsBinding {
 				}
 				buffer = buffer.deleteCharAt(buffer.toString().length()-1);
 			};
+			buffer.append("\n");
+			
 			
 			buffer.append(scripts);
 			

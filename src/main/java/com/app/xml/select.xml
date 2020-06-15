@@ -5,4 +5,21 @@
 <select id="selectTestCaseById" resultType="com.app.model.TestCase" parameterType="Long">
 	select * from testcase where id = #{id}
 </select>
+<select id="selectScriptById" resultType="com.app.model.Script" parameterType="Long">
+	select * from scripts_testcase where script_id = #{id}
+</select>
+<select id="selectAllScripts" resultType="com.app.model.Script">
+	select * from scripts_testcase
+</select>
+
+<select id="selectBrowserDriverById" resultType="com.app.model.BrowserDriver" parameterType="Long">
+	select * from browser_driver where browser_id = #{browser_id}
+</select>
+
+<select id="selectBrowsers" resultType="com.app.model.BrowserDriver">
+	select * from browser_driver
+</select>
+<select id="selectResultByReffAndPrefix" resultType="com.app.model.ResultTestCase" parameterType="Map">
+	select * from resulttestcase where reff_id = #{reff_id} and prefix = #{prefix} order by created_on desc
+</select>
 </mapper>

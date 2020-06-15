@@ -2,10 +2,10 @@ package com.app.model;
 
 public class TestCase {
 	private Long id;
-	private String script;
 	private int typecase;
 	private String remote;
 	private Long type_browser;
+	private Long script_id;
 	
 	public Long getId() {
 		return id;
@@ -13,12 +13,7 @@ public class TestCase {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getScript() {
-		return script;
-	}
-	public void setScript(String script) {
-		this.script = script;
-	}
+
 	public int getTypecase() {
 		return typecase;
 	}
@@ -36,6 +31,12 @@ public class TestCase {
 	}
 	public void setType_browser(Long type_browser) {
 		this.type_browser = type_browser;
+	}
+	public Long getScript_id() {
+		return script_id;
+	}
+	public void setScript_id(Long script_id) {
+		this.script_id = script_id;
 	}
 
 }

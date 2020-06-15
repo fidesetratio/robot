@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+        
+
+<tiles-definitions>  
+<definition name="base.definition" 
+        template="/WEB-INF/layout/classic.jsp">  
+        <put-attribute name="title" value="home" />  
+       <put-attribute name="body" value="" />  
+      </definition>  
+    
+    
+    <!-- Home Page  -->
+    <definition name="homePage" extends="base.definition">  
+        <put-attribute name="title" value="Home Page" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/home/home.jsp" />  
+    
+    </definition>  
+    
+    
+    <!-- Add Scripts  -->
+    <definition name="addScript" extends="base.definition">  
+        <put-attribute name="title" value="Add Script" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/forms/add.jsp" />  
+    </definition>  
+    
+      <!-- Edit Test Case  -->
+    <definition name="editTestCase" extends="base.definition">  
+        <put-attribute name="title" value="Edit Test Case" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/forms/editTestCase.jsp" />  
+    </definition> 
+    
+      <!-- List Scripts  -->
+    <definition name="listScript" extends="base.definition">  
+        <put-attribute name="title" value="Add Script" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/lists/listsscripts.jsp" />  
+    </definition>  
+      <!-- List Scripts  -->
+    <definition name="executeScenario" extends="base.definition">  
+        <put-attribute name="title" value="Execute Scenario" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/lists/listsresult.jsp" />  
+    </definition>  
+    
+</tiles-definitions>
