@@ -3,7 +3,16 @@
   'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
 <mapper namespace='com.app.dao.RobotDao'>
 
-<insert id="updateScript"  parameterType="com.app.model.Script">
+<update id="updateScript"  parameterType="com.app.model.Script">
 	update scripts_testcase set script_name = #{script_name}, description = #{description}, scripts = #{scripts} where script_id = #{script_id}
-	</insert>
+</update>
+<update id="updateBrowserDriver"  parameterType="com.app.model.BrowserDriver">
+	update browser_driver set browser_name = #{browser_name}, browser_type = #{browser_type}, remote_url = #{remote_url} where browser_id = #{browser_id}
+</update>
+
+<update id="updateCategoryParameter"  parameterType="com.app.model.CategoryParameter">
+	update category_parameter set cat_name = #{cat_name}, description = #{description} where cat_id = #{cat_id}
+</update>
+		
+	
 </mapper>

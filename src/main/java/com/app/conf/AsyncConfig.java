@@ -19,15 +19,6 @@ public class AsyncConfig extends AsyncSupportConfigurer {
         return taskExecutor;
     }
     
-    @Bean (name = "taskExecutor")
-    public Executor taskExecutor() {
-         final ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(2);
-        executor.setMaxPoolSize(2);
-        executor.setQueueCapacity(100);
-        executor.setThreadNamePrefix("CarThread-");
-        executor.initialize();
-        return executor;
-    }
+    
 
 }

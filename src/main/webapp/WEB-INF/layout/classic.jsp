@@ -70,10 +70,12 @@ $(document).ready(function() {
 			},
 			success : function(res, status, xhr, form){
 				var content = $(res).html();
+				
 				if($(res).find("#back_url").length>0){
 					alert($(res).find("#message").text());
 					var url = $(res).find("#back_url").val();
 					$(location).prop('href', url);
+					
 				}else{
 					form.html(content);
 				}
@@ -82,7 +84,7 @@ $(document).ready(function() {
 				
 			},
 			error : function(xhr, textStatus, errorThrown){
-			
+				alert(JSON.stringify(xhr));
 			}
 			
 			
@@ -92,6 +94,7 @@ $(document).ready(function() {
 	
 	
 	$("#mod").find("form").each(function(e){
+
 		$(this).ajaxForm(options); 
 	});
 	
@@ -192,12 +195,21 @@ $(document).ready(function() {
         	
         </ul>
       </li>
-      <li><a href="#">Parameter</a></li>
+      <li><a  class="dropdown-toggle" data-toggle="dropdown" href="#">Parameter
+       <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+          <li><a href="editbrowser?browser_id=0">Add Category Parameter</a></li>
+          <li><a href="browsers">Add Parameter</a></li>
+          <li><a href="categoryparameter">Category Parameter</a></li>
+        	
+        </ul>
+      </li>
       <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Browser
         <span class="caret"></span></a>
           <ul class="dropdown-menu">
-          <li><a href="edittestcase?caseid=0">Add Browser</a></li>
-          <li><a href="edittestcase">Browsers</a></li>
+          <li><a href="editbrowser?browser_id=0">Add Browser</a></li>
+          <li><a href="browsers">Browsers</a></li>
         	
         </ul>
       </li>

@@ -11,4 +11,10 @@
 <insert id="insertResultTestCase"  parameterType="com.app.model.ResultTestCase">
 	insert into resulttestcase(reff_id,photo_id,description,pass,status,prefix,case_name,penanda) values(#{reff_id},#{photo_id},#{description},#{pass},#{status},#{prefix},#{case_name},#{penanda})
 </insert>
+<insert id="insertBrowserDriver" parameterType="com.app.model.BrowserDriver">
+   insert into browser_driver(browser_name,browser_type,remote_url) values(#{browser_name},#{browser_type},#{remote_url});
+</insert>
+<insert id="insertCategoryParameter" parameterType="com.app.model.CategoryParameter">
+   insert into browser_driver(cat_name,description) values(#{cat_name},#{description});
+</insert>
 </mapper>

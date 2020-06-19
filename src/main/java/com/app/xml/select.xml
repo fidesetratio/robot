@@ -16,10 +16,18 @@
 	select * from browser_driver where browser_id = #{browser_id}
 </select>
 
+
+
+
 <select id="selectBrowsers" resultType="com.app.model.BrowserDriver">
 	select * from browser_driver
 </select>
 <select id="selectResultByReffAndPrefix" resultType="com.app.model.ResultTestCase" parameterType="Map">
 	select * from resulttestcase where reff_id = #{reff_id} and prefix = #{prefix} order by created_on desc
 </select>
+
+<select id="selectAllCategoryParameters" resultType="com.app.model.CategoryParameter">
+	select * from category_parameter
+</select>
+
 </mapper>

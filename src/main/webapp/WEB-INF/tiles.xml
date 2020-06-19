@@ -43,4 +43,23 @@
         <put-attribute name="body" value="/WEB-INF/jsp/lists/listsresult.jsp" />  
     </definition>  
     
+    
+      <!-- List Browser  -->
+    <definition name="browsers" extends="base.definition">  
+        <put-attribute name="title" value="Execute Scenario" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/lists/listsbrowser.jsp" />  
+    </definition>  
+    
+       <!-- Edit Browser  -->
+    <definition name="addBrowser" extends="base.definition">  
+        <put-attribute name="title" value="Execute Scenario" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/forms/addbrowser.jsp" />  
+    </definition>  
+    
+    <!-- Category Parameter -->
+    <definition name="categoryParameter" extends="base.definition">  
+        <put-attribute name="title" value="Category Parameter" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/lists/listcategoryparameter.jsp" />  
+    </definition> 
+
 </tiles-definitions>

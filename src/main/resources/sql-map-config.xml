@@ -28,6 +28,7 @@
   <mapper resource="com/app/xml/select.xml" />
   <mapper resource="com/app/xml/insert.xml" />  
     <mapper resource="com/app/xml/update.xml" />  
+     <mapper resource="com/app/xml/delete.xml" />  
  </mappers>
  
  

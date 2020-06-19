@@ -48,6 +48,7 @@ public class HomeController {
 		  if(act.equals("add")) {
 			  robotServices.insertScript(s);
 			  error = 1;
+			  
 			  formAction = "forms/add";
 			  message_error = "Succesfully added";
 		  }else if(act.equals("update")) {

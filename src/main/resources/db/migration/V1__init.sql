@@ -51,15 +51,17 @@ create table parameters(
 	parameter_name varchar(200) not null default '',
 	parameter_type int not null default 0, /** 0 normal, 1 : random, 2 date dd-mm-yyyy **/
 	parameter_value varchar(200) not null default '',
-    param_cat_id int not null default 0,
+    cat_id int not null default 0,
 	primary key(parameter_id)
 	
 );
 
-create table param_cat_id(
-  cat_id int not null auto_increment,
-  cat_name varchar(200) not null default '',
-  primary key(cat_id)
+
+create table category_parameter(
+cat_id int not null auto_increment,
+cat_name varchar(200) not null default '',
+description text,
+primary key(cat_id)
 );
 /* 
  * type_browser = 1  ie
