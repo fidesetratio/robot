@@ -67,7 +67,8 @@ public class RobotRest {
 			        request, "prefix", "default");
 		 
 		 
-		 
+		 Long param_id  = ServletRequestUtils.getLongParameter(
+			        request, "param_id", 0); 
 		 
 		 
 		 
@@ -86,9 +87,8 @@ public class RobotRest {
 		 CompletableFuture<ResultTestCase> r = new CompletableFuture<ResultTestCase>();
 		 try { 
 		 WebDriver webDriver = WebDriverUtils.basedOnBrowserDriver(browserDriver,false);
-		 r = testCaseServices.execute(webDriver, script, refferensi,prefix);
+		 r = testCaseServices.execute(webDriver, script, refferensi,prefix,param_id);
 		 r.complete(resultTestCase);
-		
 		 return r.get(timeout,TimeUnit.MILLISECONDS);
 		} catch (InterruptedException e) {
 			resultTestCase.setPass(-1);

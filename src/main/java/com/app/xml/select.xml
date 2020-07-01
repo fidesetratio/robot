@@ -30,4 +30,17 @@
 	select * from category_parameter
 </select>
 
+<select id="selectCategoryParameterById" resultType="com.app.model.CategoryParameter"  parameterType="Long">
+	select * from category_parameter where cat_id = #{cat_id}
+</select>
+
+<select id="selectParameterByCategoryId" resultType="com.app.model.Parameter"  parameterType="Long">
+	select * from parameters where cat_id = #{cat_id}
+</select>
+<select id="selectParameterById" resultType="com.app.model.Parameter"  parameterType="Long">
+	select * from parameters where parameter_id = #{parameter_id}
+</select>
+
+
+
 </mapper>

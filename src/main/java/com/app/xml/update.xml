@@ -13,6 +13,8 @@
 <update id="updateCategoryParameter"  parameterType="com.app.model.CategoryParameter">
 	update category_parameter set cat_name = #{cat_name}, description = #{description} where cat_id = #{cat_id}
 </update>
-		
-	
+
+<update id="updateParameter"   parameterType="com.app.model.Parameter">
+	update parameters set parameter_name = #{parameter_name}, parameter_type = #{parameter_type},parameter_value=#{parameter_value},cat_id=#{cat_id} where parameter_id = #{parameter_id}
+</update>
 </mapper>

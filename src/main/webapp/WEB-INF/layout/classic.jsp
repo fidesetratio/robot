@@ -103,9 +103,10 @@ $(document).ready(function() {
 		event.preventDefault();
 		var script_id = $("#availableScript").val();
 		var browser_id = $("#availableBrowser").val();
+		var param_id = $("#parameterid").val();
 		var prefix = $("#prefix").val();
 		var api_url = "/robot/exec";
-		api_url = api_url + "?browser_id=" + browser_id + "&script_id=" + script_id+"&prefix"+prefix;
+		api_url = api_url + "?browser_id=" + browser_id + "&script_id=" + script_id+"&prefix"+prefix+"&param_id="+param_id;
 		loadingTable("tablelist");
 		$.ajax({
 	        url: api_url,
@@ -199,8 +200,6 @@ $(document).ready(function() {
        <span class="caret"></span>
       </a>
       <ul class="dropdown-menu">
-          <li><a href="editbrowser?browser_id=0">Add Category Parameter</a></li>
-          <li><a href="browsers">Add Parameter</a></li>
           <li><a href="categoryparameter">Category Parameter</a></li>
         	
         </ul>

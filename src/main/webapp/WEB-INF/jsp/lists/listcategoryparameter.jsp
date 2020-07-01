@@ -7,7 +7,7 @@
 <div class="row">
   
 	<div class="col-xs-12 col-sm-12">
-	 <a href="editbrowser?script_id=0" class="btn btn-info" role="button">Add</a>
+	 <a href="editcategory?cat_id=0" class="btn btn-info" role="button">Add</a>
    <br/>
      <br/>
        <br/>
@@ -28,7 +28,7 @@
 										</thead>
 										
 										<tbody>
-										<c:forEach items="${categoryparameter}" var="br">
+										<c:forEach items="${listcategoryparameter}" var="br">
 										<tr>
 										 <td>
         							    <c:out value="${br.cat_name}" />
@@ -36,7 +36,7 @@
         								 <td>
         							    <c:out value="${br.description}" />
         							</td>
-        							<td><a href="editcategory?cat_id=${br.cat_id}">Edit</a> | <a href="editbrowser?browser_id=${br.browser_id}&action=delete">Delete</a></td>
+        							<td><a href="editcategory?cat_id=${br.cat_id}">Edit</a> | <a href="editcategory?cat_id=${br.cat_id}&action=delete">Delete</a> | <a href="parameters?cat_id=${br.cat_id}">Add Parameters</a></td>
 										</tr>
 										</c:forEach>
 										</tbody>

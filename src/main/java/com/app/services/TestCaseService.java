@@ -1,6 +1,8 @@
 package com.app.services;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
@@ -9,10 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import com.app.model.Parameter;
 import com.app.model.ResultTestCase;
 import com.app.model.Script;
 import com.app.model.TestCase;
 import com.app.utils.GroovyUtilsBinding;
+import com.app.utils.ParameterUtils;
 import com.app.utils.TestManager;
 import com.app.utils.WebDriverUtils;
 
@@ -34,7 +38,7 @@ public class TestCaseService {
 	
 	
 	@Async
-	public CompletableFuture<ResultTestCase> execute(WebDriver driver, Script script, String referensi,String prefix){
+	public CompletableFuture<ResultTestCase> execute(WebDriver driver, Script script, String referensi,String prefix, Long parameterId){
 		
 		ResultTestCase resultTestCase = new ResultTestCase();
 		resultTestCase.setReff_id(referensi);
@@ -43,9 +47,16 @@ public class TestCaseService {
 		try {
 			TestManager testManager = new TestManager(driver, "img/",referensi, robotServices, prefix);
 			HashMap<String,Object> m = new HashMap<String,Object>();		 
+			List<Parameter> parameters = new ArrayList<Parameter>();
+			if(parameterId>0) {
+				
+				parameters = robotServices.selectParameterByCategoryId(parameterId);
+			}
+			ParameterUtils parameterUtils = new ParameterUtils(parameters);
 			m.put("driver", driver);
 			m.put("result", resultTestCase);
 			m.put("tm", testManager);
+			m.put("p",parameterUtils);
 			GroovyUtilsBinding groovyBinding = new GroovyUtilsBinding(m);
 			groovyBinding.addLib("import java.util.concurrent.TimeUnit");
 			groovyBinding.addLib("import org.openqa.selenium.WebDriver");

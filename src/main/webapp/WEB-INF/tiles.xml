@@ -61,5 +61,24 @@
         <put-attribute name="title" value="Category Parameter" />  
         <put-attribute name="body" value="/WEB-INF/jsp/lists/listcategoryparameter.jsp" />  
     </definition> 
-
+    
+    
+        <!-- Edit Category Parameter -->
+    <definition name="addCategoryParameter" extends="base.definition">  
+        <put-attribute name="title" value="Edit Category Parameter" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/forms/addparametercategory.jsp" />  
+    </definition> 
+    
+   <!--  Parameter -->
+    <definition name="parameters" extends="base.definition">  
+        <put-attribute name="title" value="Parameters" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/lists/listparameters.jsp" />  
+    </definition> 
+    
+     <!-- Edit Parameter -->
+    <definition name="addParameter" extends="base.definition">  
+        <put-attribute name="title" value="Edit Parameter" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/forms/addparameter.jsp" />  
+    </definition> 
+    
 </tiles-definitions>

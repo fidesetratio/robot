@@ -6,7 +6,13 @@
 <delete id="deleteBrowserId"  parameterType="com.app.model.BrowserDriver">
 	delete from browser_driver where browser_id = #{browser_id}
 </delete>
-
-	
-	
+<delete id="deleteCategoryParameter"  parameterType="com.app.model.CategoryParameter">
+	delete from category_parameter where cat_id = #{cat_id}
+</delete>
+<delete id="deleteParametersByCatId"  parameterType="Long">
+	delete from parameters where cat_id = #{cat_id}
+</delete>
+<delete id="deleteParametersByParameterId"  parameterType="Long">
+	delete from parameters where parameter_id = #{parameter_id}
+</delete>
 </mapper>

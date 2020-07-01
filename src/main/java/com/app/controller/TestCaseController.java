@@ -24,6 +24,7 @@ public class TestCaseController {
 	    public String executescenario(Model model,HttpServletRequest request,@ModelAttribute("script") Script s) {
 		  model.addAttribute("scripts",robotServices.selectAllScripts());
 		  model.addAttribute("browsers",robotServices.selectBrowsers());
+		  model.addAttribute("catparams",robotServices.selectAllCategoryParameters());
 		  return "executeScenario";
 	  }
 }

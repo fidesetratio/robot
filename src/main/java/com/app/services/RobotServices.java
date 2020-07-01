@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.app.dao.RobotDao;
 import com.app.model.BrowserDriver;
 import com.app.model.CategoryParameter;
+import com.app.model.Parameter;
 import com.app.model.ResultTestCase;
 import com.app.model.Script;
 import com.app.model.TestCase;
@@ -56,6 +57,11 @@ public class RobotServices {
 		RobotDao dao=sqlSession.getMapper(RobotDao.class);
 		dao.deleteBrowserId(browserDriver);
 	}
+	
+	public void deleteParametersByParameterId(Long parameter_id) {
+		RobotDao dao=sqlSession.getMapper(RobotDao.class);
+		dao.deleteParametersByParameterId(parameter_id);
+	}
 	public List<Script>  selectAllScripts() {
 		RobotDao dao=sqlSession.getMapper(RobotDao.class);
 		
@@ -70,6 +76,24 @@ public class RobotServices {
 		return categoryParameter; 
 	}
 	
+	public CategoryParameter selectCategoryParameterById(Long cat_id) {
+		RobotDao dao=sqlSession.getMapper(RobotDao.class);
+		CategoryParameter categoryParameter = (CategoryParameter)dao.selectCategoryParameterById(cat_id);
+		return categoryParameter; 
+	}
+	
+	public void deleteCategoryParameter(CategoryParameter categoryParemeter) {
+		RobotDao dao=sqlSession.getMapper(RobotDao.class);
+		dao.deleteCategoryParameter(categoryParemeter);
+	
+	}
+	
+	public void deleteParametersByCatId(Long cat_id) {
+		RobotDao dao=sqlSession.getMapper(RobotDao.class);
+		dao.deleteParametersByCatId(cat_id);
+	
+	}
+	
 	public List<BrowserDriver>  selectBrowsers() {
 		RobotDao dao=sqlSession.getMapper(RobotDao.class);
 		
@@ -78,10 +102,23 @@ public class RobotServices {
 		return browsers;
 	}
 	
+	public List<Parameter> selectParameterByCategoryId(Long cat_id){
+	RobotDao dao=sqlSession.getMapper(RobotDao.class);
+		
+		List<Parameter> parameters = (List<Parameter>)dao.selectParameterByCategoryId(cat_id);
+		
+		return parameters;
+	}
+	
 	public void  updateScript(Script script) {
 		RobotDao dao=sqlSession.getMapper(RobotDao.class);
 		
 		dao.updateScript(script);
+	}
+	
+	public void updateParameter(Parameter parameter) {
+		RobotDao dao=sqlSession.getMapper(RobotDao.class);
+		dao.updateParameter(parameter);
 	}
 
 	public void  updateBrowserDriver(BrowserDriver browserDriver) {
@@ -112,6 +149,15 @@ public class RobotServices {
 		map.put("reff_id", reff_id);
 		map.put("prefix", prefix);
 		return (List<ResultTestCase>)dao.selectResultByReffAndPrefix(map);
+	}
+	
+	public Parameter selectParameterById(Long parameter_id) {
+		RobotDao dao=sqlSession.getMapper(RobotDao.class);
+		return (Parameter) dao.selectParameterById(parameter_id);
+	}
+	public void insertParameter(Parameter parameter) {
+		RobotDao dao=sqlSession.getMapper(RobotDao.class);
+		 dao.insertParameter(parameter);
 	}
 	
 }

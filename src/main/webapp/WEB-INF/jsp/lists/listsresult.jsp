@@ -37,11 +37,13 @@
                             <div class="col-lg-4">
                                 <div class="form-inline">
                                     <label class="control-label" for="State">Parameter</label>
-                                 <select class="form-control" id="sel1">
-    <option>Script 001</option>
-    <option>Script 001</option>
-    <option>Script 001</option>
-    <option>Script 001</option>
+                                 <select class="form-control" id="parameterid" name="parameterid" id="sel1">
+                                  <option value="0" selected>Select Available Parameter</option>
+  <c:forEach items="${catparams}" var="cat_param">
+        <option value="${cat_param.cat_id}">${cat_param.cat_name}</option>
+    </c:forEach>
+  
+  
   </select>
                                    </div>
                             </div>
